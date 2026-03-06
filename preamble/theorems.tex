@@ -1,40 +1,31 @@
 % filepath: preamble/theorems.tex
 
-\usepackage{amsthm}
+% amsthm is already loaded by newpxmath — do not load again
 \usepackage{mdframed}
-\usepackage{relsize}       % provides \larger for the first-letter size bump
-
-% ── Helper Command ────────────────────────────────────────────
-% \schead{Word} — small caps with a slightly larger first letter
-\newcommand{\schead}[1]{%
-    \textsc{\larger\textbf{#1}}%
-}
+\usepackage{relsize}
 
 % ── Custom Theorem Styles ─────────────────────────────────────
+% The header font argument must be pure font declarations, no arguments
 
-% Plain style — upright body (no italics), letterspaced small caps header
 \newtheoremstyle{elegant-plain}
     {12pt}{8pt}
-    {\normalfont}{}              % upright body font
-    {\schead}{.}
+    {\normalfont}{}
+    {\bfseries\scshape}{.}    % pure font switches — no argument commands
     {0.5em}{}
 
-% Definition style — identical body, same header treatment
 \newtheoremstyle{elegant-definition}
     {12pt}{8pt}
     {\normalfont}{}
-    {\schead}{.}
+    {\bfseries\scshape}{.}
     {0.5em}{}
 
-% Remark style — upright body, same header but not bold
 \newtheoremstyle{elegant-remark}
     {8pt}{8pt}
     {\normalfont}{}
-    {\scshape}{.}
+    {\itshape}{.}
     {0.5em}{}
 
 % ── Assign Styles ─────────────────────────────────────────────
-
 \theoremstyle{elegant-plain}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
@@ -52,3 +43,17 @@
 
 % ── Proof Styling ─────────────────────────────────────────────
 \renewcommand{\proofname}{\normalfont\scshape Proof}
+
+% ── mdframed Shared Style ─────────────────────────────────────
+\mdfsetup{
+    skipabove         = 10pt,
+    skipbelow         = 8pt,
+    innertopmargin    = 6pt,
+    innerbottommargin = 8pt,
+    innerleftmargin   = 10pt,
+    innerrightmargin  = 6pt,
+    linewidth         = 1.2pt,
+    rightline         = false,
+    topline           = false,
+    bottomline        = false
+}

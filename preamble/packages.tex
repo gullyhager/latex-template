@@ -1,16 +1,17 @@
 % filepath: preamble/packages.tex
+
 % ── Core ──────────────────────────────────────────────────────
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{newpxtext}   % Palatino text font
-\usepackage{newpxmath}   % Matching Palatino math font
-\usepackage{microtype}   % Subtle kerning and ligature improvements
 \usepackage{microtype}
 
+% ── Typography ────────────────────────────────────────────────
+% The amsthm option forces newpxmath to load amsthm despite its default
+\usepackage{newpxtext}
+\usepackage[amsthm]{newpxmath}
+\usepackage{lipsum}
+
 % ── Mathematics ───────────────────────────────────────────────
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
 \usepackage{mathtools}
 \usepackage{bm}
 \usepackage{bbm}
@@ -18,7 +19,13 @@
 \usepackage[thinc]{esdiff}
 
 % ── Layout ────────────────────────────────────────────────────
-\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage[
+    a4paper,
+    top    = 2.5cm,
+    bottom = 2cm,     % slightly shorter than the default 
+    left   = 2.5cm,
+    right  = 2.5cm
+]{geometry}
 \usepackage{setspace}
 \usepackage{parskip}
 

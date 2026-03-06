@@ -18,12 +18,16 @@
 \thispagestyle{firstpage}    % suppress header on first page
 \maketitle
 
-\input{sections/abstract}    
+\input{sections/abstract}
+\tableofcontents
 
 \input{sections/introduction}
 
-
+\newpage
+\clearpage
+\pagestyle{plain}
 \bibliographystyle{plain}
+\vspace{-1cm}
 \bibliography{references}
 
 \end{document}
