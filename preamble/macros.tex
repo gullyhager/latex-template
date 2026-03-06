@@ -32,3 +32,28 @@
 
 % ── Analysis ──────────────────────────────────────────────────
 \newcommand{\eps}{\varepsilon}
+
+
+% ── Figure & Table Helpers ────────────────────────────────────
+
+% \fig{filename}{caption}{label}{width}
+% Looks for the file in assets/figures/ automatically
+\newcommand{\fig}[4]{
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=#4\textwidth]{#1}
+        \caption{#2}
+        \label{fig:#3}
+    \end{figure}
+}
+
+% \inputtable{filename}{caption}{label}
+% Looks for the file in assets/tables/ automatically
+\newcommand{\inputtable}[3]{
+    \begin{table}[H]
+        \centering
+        \caption{#2}
+        \label{tab:#3}
+        \input{assets/tables/#1}
+    \end{table}
+}
