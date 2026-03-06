@@ -1,0 +1,54 @@
+% filepath: preamble/theorems.tex
+
+\usepackage{amsthm}
+\usepackage{mdframed}
+\usepackage{relsize}       % provides \larger for the first-letter size bump
+
+% ── Helper Command ────────────────────────────────────────────
+% \schead{Word} — small caps with a slightly larger first letter
+\newcommand{\schead}[1]{%
+    \textsc{\larger\textbf{#1}}%
+}
+
+% ── Custom Theorem Styles ─────────────────────────────────────
+
+% Plain style — upright body (no italics), letterspaced small caps header
+\newtheoremstyle{elegant-plain}
+    {12pt}{8pt}
+    {\normalfont}{}              % upright body font
+    {\schead}{.}
+    {0.5em}{}
+
+% Definition style — identical body, same header treatment
+\newtheoremstyle{elegant-definition}
+    {12pt}{8pt}
+    {\normalfont}{}
+    {\schead}{.}
+    {0.5em}{}
+
+% Remark style — upright body, same header but not bold
+\newtheoremstyle{elegant-remark}
+    {8pt}{8pt}
+    {\normalfont}{}
+    {\scshape}{.}
+    {0.5em}{}
+
+% ── Assign Styles ─────────────────────────────────────────────
+
+\theoremstyle{elegant-plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{elegant-definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{nonexample}[theorem]{Non-Example}
+
+\theoremstyle{elegant-remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem*{note}{Note}
+
+% ── Proof Styling ─────────────────────────────────────────────
+\renewcommand{\proofname}{\normalfont\scshape Proof}

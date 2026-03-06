@@ -1,0 +1,29 @@
+% filepath: main.tex
+\documentclass[12pt, a4paper]{article}
+
+% ── Preamble Modules ──────────────────────────────────────────
+\input{preamble/packages}
+\input{preamble/formatting}
+\input{preamble/theorems}
+\input{preamble/macros}
+
+% ── Document Metadata ─────────────────────────────────────────
+\title{Your Title Here}
+\author{Your Name}
+\date{\today}
+
+% ──────────────────────────────────────────────────────────────
+\begin{document}
+
+\thispagestyle{firstpage}    % suppress header on first page
+\maketitle
+
+\input{sections/abstract}    
+
+\input{sections/introduction}
+\input{sections/conclusion}
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

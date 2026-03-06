@@ -1,0 +1,34 @@
+% filepath: preamble/macros.tex
+
+% ── General Operators ─────────────────────────────────────────
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+% ── Probability Theory ────────────────────────────────────────
+\newcommand \Prob       [1]{\mathbb{P}\left[ #1 \right]}
+\newcommand \Pgiv       [2]{\mathbb{P}\left[ #1 \mid #2 \right]}
+\newcommand \E          [1]{\mathbb{E}\left[ #1 \right]}
+\newcommand \Egiv       [2]{\mathbb{E}\left[ #1 \mid #2 \right]}
+\newcommand \V          [1]{\mathbb{V}\left[ #1 \right]}
+\newcommand \Vgiv       [2]{\mathbb{V}\left[ #1 \mid #2 \right]}
+\newcommand \Cov        [1]{\mathbb{C}\text{ov}\left[ #1 \right]}
+\newcommand \Covgiv     [2]{\mathbb{C}\text{ov}\left[ #1 \mid #2 \right]}
+\newcommand \ind        [1]{\mathds{1}_{\left\{ #1 \right\}}}
+\newcommand{\iid}{\overset{\text{iid}}{\sim}}
+\newcommand{\dist}{\overset{\mathcal{L}}{=}}
+
+% ── Regression ────────────────────────────────────────────────
+\newcommand \Bols       [0]{\widehat{\bm{\beta}}_{\text{ols}}}
+\newcommand \Gols       [0]{\widehat{\bm{\beta}}_{\text{gls}}}
+
+% ── Linear Algebra ────────────────────────────────────────────
+\newcommand \norm       [1]{\left\lVert#1\right\rVert}
+\newcommand \diag       [1]{\mathbf{diag}\left(#1\right)}
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\inner}[2]{\left\langle #1,\, #2 \right\rangle}
+\newcommand{\T}{\mathsf{T}}          % transpose
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\tr}{\operatorname{tr}}
+
+% ── Analysis ──────────────────────────────────────────────────
+\newcommand{\eps}{\varepsilon}
