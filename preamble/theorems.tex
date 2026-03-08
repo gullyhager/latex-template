@@ -3,14 +3,14 @@
 % amsthm is already loaded by newpxmath — do not load again
 \usepackage{mdframed}
 \usepackage{relsize}
+\usepackage{etoolbox}
 
 % ── Custom Theorem Styles ─────────────────────────────────────
-% The header font argument must be pure font declarations, no arguments
 
 \newtheoremstyle{elegant-plain}
     {12pt}{8pt}
     {\normalfont}{}
-    {\bfseries\scshape}{.}    % pure font switches — no argument commands
+    {\bfseries\scshape}{.}
     {0.5em}{}
 
 \newtheoremstyle{elegant-definition}
@@ -20,6 +20,18 @@
     {0.5em}{}
 
 \newtheoremstyle{elegant-remark}
+    {8pt}{8pt}
+    {\normalfont}{}
+    {\itshape}{.}
+    {0.5em}{}
+
+\newtheoremstyle{elegant-problem}
+    {12pt}{8pt}
+    {\normalfont}{}
+    {\bfseries\scshape}{.}
+    {0.5em}{}
+
+\newtheoremstyle{elegant-solution}
     {8pt}{8pt}
     {\normalfont}{}
     {\itshape}{.}
@@ -41,6 +53,12 @@
 \newtheorem{remark}[theorem]{Remark}
 \newtheorem*{note}{Note}
 
+\theoremstyle{elegant-problem}
+\newtheorem{problem}{Problem}
+
+\theoremstyle{elegant-solution}
+\newtheorem*{solution}{Solution}
+
 % ── Proof Styling ─────────────────────────────────────────────
 \renewcommand{\proofname}{\normalfont\scshape Proof}
 
@@ -56,4 +74,10 @@
     rightline         = false,
     topline           = false,
     bottomline        = false
+}
+
+% ── Separator after each problem ──────────────────────────────
+\AtEndEnvironment{problem}{%
+    \vspace{4pt}%
+    \begin{center}\rule{0.5\textwidth}{0.4pt}\end{center}%
 }
